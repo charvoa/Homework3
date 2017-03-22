@@ -1,11 +1,12 @@
 package com.example.accelerometer;
 
+import android.app.Activity;
 import android.os.PowerManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     private static final String TAG = "com.example.accelerometer.MainActivity";
     private PowerManager.WakeLock mWakeLock;
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        mWakeLock.acquire();
+        //mWakeLock.acquire();
         mSimulationView.startSimulation();
     }
 
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         mSimulationView.stopSimulation();
-        mWakeLock.release();
+        //mWakeLock.release();
     }
 }
 
